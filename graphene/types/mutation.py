@@ -90,7 +90,6 @@ class Mutation(ObjectType):
 
         if not output:
             # If output is defined, we don't need to get the fields
-            fields = OrderedDict()
             for base in reversed(cls.__mro__):
                 fields.update(yank_fields_from_attrs(base.__dict__, _as=Field))
             output = cls
